@@ -1,0 +1,16 @@
+language: java
+
+# build safelist
+branches:
+  only:
+  - master
+
+jdk:
+    - openjdk8
+
+install:
+    - gradle assemble
+
+script:
+    - gradle check
+#   - sonar-scanner

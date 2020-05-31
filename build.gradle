@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+javadoc.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
+
+// set project repositories (jar libs server)
+repositories {
+    mavenCentral()
+}
+
+/*****
+ * libs definition
+ * 	- compile
+ *	- runtime
+ *	- testCompile
+ *	- testRuntime
+ * format = Group:Module:Version
+ */
+dependencies {
+    compile 'commons-codec:commons-codec:1.8'
+    testCompile 'junit:junit:4.+'
+}
