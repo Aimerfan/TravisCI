@@ -5,16 +5,9 @@ dist: xenial
 jdk:
     - openjdk11
 
-# build safelist
-branches:
-  only:
-  - master
-  - sonarqube
-
 install:
     - gradle assemble
 
 script:
-    - gradle check
-    # - sonar-scanner -D sonar.host.url=$SONAR_HOST_URL -D sonar.login=$SONAR_TOKEN -X
+    # - gradle test
     - gradle sonarqube -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
